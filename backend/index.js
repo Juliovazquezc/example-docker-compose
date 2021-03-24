@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 const port = process.env.PORT || 5000;
-const db = process.env.MONGO_URL;
+const db = process.env.MONGO_URL || 'mongodb://localhost:27017/todos';
 mongoose.connect(db);
 mongoose.connection.once('open', () => console.log('Db connected'));
 
